@@ -1,4 +1,5 @@
 <?php
+header('Access-control-Allow-origin:*');
 			
 	$rg=$_POST['rg'];
 	

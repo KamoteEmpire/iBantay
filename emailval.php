@@ -1,4 +1,3 @@
-//Email Validation
 <?php 
 include_once("db.php");
 	header('Access-Control-Allow-Origin: *');

@@ -1,4 +1,5 @@
 <?php
+header('Access-control-Allow-origin:*');
 			
 	$pd=$_POST['pd'];
 	$pr=$_POST['pr'];
@@ -166,6 +167,26 @@
 						<?php echo $node->id; ?>
 					</div>
 				</div>				
+			</div>
+			
+			<div class="warning alert" style="width:100%; font-size:14px; text-align:left;" id="<?php echo $node->id; ?>">
+				<?
+				
+				mysql_connect("localhost", "gcccsorg", "3ec9JBxc13")or die("cannot connect"); 
+				mysql_select_db("gcccsorg_ibantay")or die("cannot select DB");	
+				$lks="SELECT * FROM tblactions WHERE forID='".$pd."'";
+				$lksr=mysql_query($lks);
+				$lksc=mysql_num_rows($lksr);
+				
+				?>
+				<div class="row">
+					<div class="six columns">
+						<p style="color:#705115; font-size:14px; display:inline;">Likes: <?php echo $lksc;?></p>
+					</div>
+					<div class="six columns">
+						<p style="color:#705115; font-size:14px; display:inline;">Don't Likes:</p>
+					</div>
+				</div>
 			</div>
 		
 		<?php	

@@ -12,7 +12,15 @@ $response = "notliked";
 $sql = "SELECT * FROM tblactions where forID = '".$entryID."' and username = '".$username."'";
 $select = mysql_query($sql);
 if (mysql_num_rows($select) > 0) {
-	$response ="liked";
+	$row = mysql_fetch_array($select);
+	if ($row['type'] == 'l')
+	{
+	$response = "liked";
+	}
+	else if ($row['type'] == 'd')
+	{
+	$response = "disliked";
+	}
 }
 echo $_GET['callback']."(".json_encode(array("response"=>$response)).");";
 ?>

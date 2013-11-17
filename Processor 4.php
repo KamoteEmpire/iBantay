@@ -1,4 +1,5 @@
 <?php
+header('Access-control-Allow-origin:*');
 			
 	$rta=$_POST['rta'];
 	
@@ -28,4 +29,5 @@
 							
 	}
 		
-	?><p style="font-size:14px; margin-top:5px;"><?php echo "Total Amount: <br/>Php ".number_format($total, 2); ?></p>
+	?><p style="font-size:14px; margin-top:5px;" id="parreg_<?php echo $rta; ?>"><?php echo "Total Amount: <br/>Php ".number_format($total, 2); ?></p>
+	<input id="epe_<?php echo $rta; ?>" value="<?php echo $total;?>" style="display: none;"/>

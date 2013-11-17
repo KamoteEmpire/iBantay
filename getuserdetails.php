@@ -1,10 +1,9 @@
-//Get user details
 <?php 
 
 include_once("db.php");
 
-	header('Access-Control-Allow-Origin: *');
-	header("Content-Type: application/json");
+header('Access-Control-Allow-Origin: *');
+header("Content-Type: application/json");
 
 	$username = $_GET["username"];
 
